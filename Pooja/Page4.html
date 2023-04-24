@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <style>
+      .riddle {
+        display: inline-block;
+        font-family: cursive;
+        font-size: 30px;
+        color: black;
+      }
+      
+      .answer-box {
+        display: inline-block;
+        width: 150px;
+        height: 30px;
+        border: 1px solid black;
+        margin-left: 10px;
+        font-family: cursive;
+        font-size: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body background="PageBG.jpg">
+    <p class="riddle">
+      Name two different words using the following:<br>
+      1. Without me 60% of living beings can't survive.<br>
+      2. Without me nothing can survive.<br>
+      Both have five letters each, but both are anagrams of each other.<br>
+      1. <input type="text" class="answer-box" id="answer1"> <br>
+      2. <input type="text" class="answer-box" id="answer2"> <br>
+    <br>
+    <button onclick="checkAnswers()">Submit</button> </p>
+    
+    <script>
+      function checkAnswers() {
+        const answer1 = document.getElementById("answer1").value.toLowerCase();
+        const answer2 = document.getElementById("answer2").value.toLowerCase();
+        
+        if (answer1 === "earth" && answer2 === "heart") {
+          window.location.href = "Colour.html";
+        } else {
+          alert("Sorry, your answers are incorrect. Please try again.");
+          window.location.href = 'Grid.html';
+        }
+      }
+    </script>
+  </body>
+</html>

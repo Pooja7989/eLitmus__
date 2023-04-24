@@ -1,0 +1,132 @@
+<html>
+<head>
+<style>
+   body{
+   background-repeat:no-repeat;
+   background-size:cover;
+   font-family: 'Comic Sans MS', cursive, sans-serif; 
+   color: rgb(81, 7, 27);
+}
+#numbers-popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.numbers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 10px;
+  width: 80%;
+  height: 80%;
+  margin: auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  font-weight: bold;
+  color: #333;
+  background-color: #e5ce90;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.number:hover {
+  background-color: #e9e9e9;
+}
+
+.size-it{
+   width: 250px;
+   height: 300px;
+}
+.button {
+  margin-left: 400px;
+  margin-right: 450px;
+  margin-bottom: auto;
+  padding: 1em 2em;
+  border-radius: 10px;
+  background-color: transparent;
+  color: rgb(81, 7, 27);
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;  
+  
+}
+.button :hover {
+    color: rgb(37, 2, 2);
+}
+</style>
+</head>
+<body>
+  <body background ="First.jpg">
+<h1><div>Love is a hidden treasure.</div> 
+ <div> I have a treasure for you inside my heart. But, my heart is locked.</div>
+ <div> Unlock my heart to move forward in the process of hunting the treasure.</div> </h1> 
+
+
+
+  <button class="button" onclick="showNumbers()">Come, solve it and unlock my heart.</button>
+  <div id="numbers-popup">
+    <div class="numbers-grid">
+      <h2>You can convert me into an infinite by pushing me down to the left or right. </h2>
+      <div class="number">1</div>
+      <div class="number">2</div>
+      <div class="number">3</div>
+      <div class="number">4</div>
+      <div class="number">5</div>
+      <div class="number">6</div>
+      <div class="number">7</div>
+      <div class="number">8</div>
+      <div class="number">9</div>
+    </div>
+  </div>
+  <div id="image-popup" style="display: none;">
+    <img class="size-it" src="Locked_.jpg">
+  </div> 
+ <script>
+ function showNumbers() {
+    const popup = document.getElementById("numbers-popup");
+    popup.style.display = "flex";
+  }
+  
+  function hideNumbers(number) {
+    const popup = document.getElementById("numbers-popup");
+    popup.style.display = "none";
+    
+    if (number === "8") {
+      window.location.href = "Final.html";
+    } else {
+      const imagePopup = document.getElementById("image-popup");
+      imagePopup.style.display = "block";
+    }
+  }
+  
+  const numbers = document.querySelectorAll(".number");
+  numbers.forEach((number) => {
+    number.addEventListener("click", () => hideNumbers(number.textContent));
+  });
+  
+  const imagePopup = document.getElementById("image-popup"); {
+ 
+    imagePopup.style.display = "none";
+    const errorDiv = document.createElement("div");
+    errorDiv.innerText = "Sorry, that's not the correct number.";
+    errorDiv.style.color = "red";
+    errorDiv.style.textAlign = "center";
+    imagePopup.appendChild(errorDiv);
+  };
+</script>
+
+</body>
+</html>

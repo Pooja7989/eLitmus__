@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+      .container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 10px;
+      }
+
+      .container img {
+        max-width: 50%;
+        height: auto;
+      }
+      .riddle{
+        display: inline-block;
+        font-family: cursive;
+        font-size: 50px;
+        color: black;
+      }
+    </style>
+  </head>
+  <body background="PageBG.jpg">
+    <p class="riddle">
+      What has 13 hearts, but no other organs?
+    </p>
+    <div class="container">
+      <img src="Octopus.jpg" alt="Image 1" onclick="selectImage('Octopus.jpg')">
+      <img src="Cokroach.jpg" alt="Image 2" onclick="selectImage('Cokroach.jpg')">
+      <img src="Cards.jpg" alt="Image 3" onclick="selectImage('Cards.jpg')">
+    </div>
+  
+    <script>
+      function selectImage(imageName) {
+        if (imageName === 'Cards.jpg') {
+          window.location.href = 'Page4.html';
+        } else {
+          alert('Please select the correct image!');
+          window.location.href = 'Grid.html';
+        }
+      }
+    </script>
+  </body>
+</html>
